@@ -109,7 +109,7 @@ if __name__ == "__main__" :
     # COMPRESS command
     incoming_compress_message_handler = MessageHandler(
         incoming_compress_message_f,
-        filters=filters.command(["compress", f"compress@{BOT_USERNAME}"])
+        filters=filters.command(["compress", f"compress@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
     )
     app.add_handler(incoming_compress_message_handler)
     
